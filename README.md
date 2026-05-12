@@ -1,6 +1,6 @@
 <h1>ExpNo 2 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: </h3>
-<h3>Register Number:     </h3>
+<h3>Name: RITHISH S </h3>
+<h3>Register Number: 212224060216 </h3>
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -73,6 +73,31 @@ F H <BR>
 ['A', 'B', 'E', 'D', 'C', 'G', 'F', 'H']
 
 <hr>
+PROGRAM: 
+
+```
+def dfs(g, n, v):
+    v.append(n)
+    for i in g[n]:
+        if i not in v:
+            dfs(g, i, v)
+    return v
+graph = {
+'A':['B','C'],
+'B':['A','E','D'],
+'C':['A','D','G'],
+'D':['B','C','F'],
+'E':['B'],
+'F':['D','G','H'],
+'G':['C','F'],
+'H':['F']
+}
+print(dfs(graph,'A',[]))
+```
+
+OUTPUT:
+<img width="524" height="109" alt="image" src="https://github.com/user-attachments/assets/d1e523ca-0bcc-44e1-a047-289d5e8225fa" />
+
 
 <hr>
 <h3>Sample Input</h3>
@@ -89,6 +114,27 @@ F H <BR>
 ['0', '1', '2', '3', '4']
 
 <hr>
+
+PROGRAM: 
+```
+def dfs(g, n, v):
+    v.append(n)
+    for i in g[n]:
+        if i not in v:
+            dfs(g, i, v)
+    return v
+graph = {
+'0':['1','2','3'],
+'1':['0'],
+'2':['0','3','4'],
+'3':['0','2'],
+'4':['2']
+}
+print(dfs(graph,'0',[]))
+```
+OUTPUT:
+<img width="455" height="150" alt="image" src="https://github.com/user-attachments/assets/cf545d18-a579-4efa-ae6c-c455a41d057b" />
+
 <h3>Result:</h3>
 <hr>
 <p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
